@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>launch question</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="/css/community.css"/>
+    <script src="/js/bootstrap.min.js" type="application/javascript"></script>
+</head>
+<body>
+<nav th:insert="footer :: nav"></nav>
+    <div class="container-fluid main">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-xs-12 clo-sm-12" >
+                <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>launch</h2>
+                <hr>
+
+                <form action="/publish" method="post">
+                    <input type="hidden" name="id" th:value="${id}">
+                    <div class="form-group">
+                        <label >Title(brief description):</label>
+                        <input name="title" id="title" type="text" th:value="${title}" class="form-control" placeholder="title..." />
+                    </div>
+                    <div class="form-group">
+                        <label >Question supplement:</label>
+                        <textarea name = "description"  id = "description"  th:text="${description}" class="form-control" placeholder="Question supplement..." cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label >add tag:</label>
+                        <input name="tag" id="tag" type="text" th:value="${tag}" class="form-control" placeholder="tag..." />
+                    </div>
+                    <div class="form-group">
+                                    <div class="container-fluid main">
+                                        <div class="row">
+                                            <div class="col-lg-9 col-md-12 col-xs-12 clo-sm-12 " >
+                                                <div class="col-lg-12 col-md-12 col-xs-12 clo-sm-12 alert alert-danger" th:if="${error != null}"  th:text="${error}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-12 col-xs-12 clo-sm-12"><button name="submit" id="submit1" type="submit" class="btn-publish" >publish</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-3 col-md-12 col-xs-12 clo-sm-12" >
+                <h3>Question launch guide</h3>
+                <p>·Question Title: Please describe the issue you posted in concise language, no more than 25 words</p>
+
+                <p>·Question supplement: Provide detailed information about your question and ensure that the problem description is clear and intuitive, and provide some relevant information: · Select tags: Select one or more appropriate tags, separated by commas, and no more than 10 words</p>
+
+                <p>·Regarding points: initiating a question will consume you 20 points, and for each additional reply you will receive a reward of 5 points. For your benefit, when initiating a question, we hope to better describe your problem and make more use of the website's search function</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
