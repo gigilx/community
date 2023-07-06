@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/java/com/lx/community/dto/PaginationDto.java
+/src/main/java/com/lx/community/dto/QuestionDto.java
+/src/main/java/com/lx/community/controller/ProfileController.java
+/src/main/java/com/lx/community/service/QuestionService.java
